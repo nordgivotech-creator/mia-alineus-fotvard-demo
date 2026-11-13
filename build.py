@@ -79,14 +79,14 @@ def top(active=""):
     return ('<a class="skip" href="#innehall">Hoppa till innehållet</a><div class="notice">Inofficiell demo framtagen av Nordgivo Tech</div><div class="bar" id="bar"></div>'
             '<header class="top"><div class="wrap nav"><a class="brand" href="index.html" aria-label="Mia Alineus Fotvård, startsida"><span class="mono">M</span>Mia Alineus <span>Fotvård</span></a>'
             '<button class="burger" id="burger" aria-expanded="false" aria-controls="menu"><span class="sr">Meny</span><i></i><i></i></button>'
-            f'<nav id="menu" aria-label="Huvudmeny">{a("index.html#behandlingar", "Behandlingar", "b")}{a("index.html#om-mia", "Om Mia", "o")}{a("index.html#omraden", "Orter", "r")}{a("blogg.html", "Blogg", "bl")}{a("kontakt.html", "Kontakt", "k")}'
+            f'<nav id="menu" aria-label="Huvudmeny">{a("behandlingar.html", "Behandlingar", "b")}{a("om-mia.html", "Om Mia", "o")}{a("orter.html", "Orter", "r")}{a("blogg.html", "Blogg", "bl")}{a("kontakt.html", "Kontakt", "k")}'
             f'<a class="button sm" href="tel:{PHONE_HREF}">Ring Mia</a></nav></div></header>')
 
 
 def foot():
     ol = "".join(f'<li><a href="fotvard-{s}.html">{n}</a></li>' for n, s in ORTER)
     return (f'<footer class="foot"><div class="wrap fg"><div><p class="brand sm"><span class="mono">M</span>Mia Alineus <span>Fotvård</span></p><p>Ambulerande fotvård med hembesök i Skåne.</p><p><a href="tel:{PHONE_HREF}">{PHONE}</a><br><a href="mailto:{MAIL}">{MAIL}</a></p></div>'
-            f'<div><h3>Besöksorter</h3><ul>{ol}</ul></div><div><h3>Läs mer</h3><ul><li><a href="blogg.html">Blogg</a></li><li><a href="kontakt.html">Kontakt och förfrågan</a></li><li><a href="index.html#fragor">Vanliga frågor</a></li><li><a href="{FB}">Mia på Facebook</a></li></ul></div></div>'
+            f'<div><h3>Besöksorter</h3><ul>{ol}</ul></div><div><h3>Läs mer</h3><ul><li><a href="behandlingar.html">Behandlingar</a></li><li><a href="om-mia.html">Om Mia</a></li><li><a href="orter.html">Besöksorter</a></li><li><a href="blogg.html">Blogg</a></li><li><a href="kontakt.html">Kontakt och förfrågan</a></li><li><a href="index.html#fragor">Vanliga frågor</a></li><li><a href="{FB}">Mia på Facebook</a></li></ul></div></div>'
             '<div class="wrap fine"><span>Demoförslag för Mia Alineus Fotvård · framtaget av Nordgivo Tech · inget skickas och inga uppgifter sparas</span></div></footer>'
             f'<a class="callbar" href="tel:{PHONE_HREF}"><span>Ring Mia</span><b>{PHONE}</b></a><script src="script.js"></script></body></html>')
 
@@ -138,10 +138,10 @@ def index():
             '<ul class="trust"><li>Certifierad undersköterska</li><li>Diplomerad fotvårdare</li><li>Hembesök i 7 orter</li></ul></div>'
             '<div class="ph"><div class="hero-photo" role="img" aria-label="Fotvård hemma"></div><div class="float"><b>Hembesök</b><span>Södra Sandby · Lund · Eslöv m.fl.</span></div></div></div></section>'
             f'<div class="mq" aria-hidden="true"><div>{mq}</div></div>'
-            f'<section id="behandlingar" class="sec"><div class="wrap"><div class="shead rv"><p class="label">Behandlingar</p><h2>Det här hjälper Mia dig med</h2><p>Klicka på ett kort för mer information. Priser lämnas på förfrågan.</p></div><div class="tg">{tre}</div></div></section>'
-            f'<section id="omraden" class="sec tint"><div class="wrap">{ortsel()}<ul class="places rv">{orter}</ul></div></section>'
+            f'<section id="behandlingar" class="sec"><div class="wrap"><div class="shead rv"><p class="label">Behandlingar</p><h2>Det här hjälper Mia dig med</h2><p>Klicka på ett kort för mer information. Priser lämnas på förfrågan. <a href="behandlingar.html">Läs mer om behandlingarna ↗</a></p></div><div class="tg">{tre}</div></div></section>'
+            f'<section id="omraden" class="sec tint"><div class="wrap">{ortsel()}<ul class="places rv">{orter}</ul><p class="rv"><a class="link" href="orter.html">Se alla besöksorter ↗</a></p></div></section>'
             '<section id="om-mia" class="sec"><div class="wrap two"><div class="rv"><p class="label">Om Mia</p><h2>Närvarande och noggrann, hemma hos dig</h2></div><div class="rv"><p class="lede">Med utgångspunkt i Södra Sandby erbjuder Mia fotvård vid hembesök. Du kan höra av dig för egen del eller hjälpa en närstående att boka.</p>'
-            '<ul class="cred"><li><b>Certifierad</b> undersköterska</li><li><b>Diplomerad</b> fotvårdare</li><li><b>Hembesök</b> i sju orter i Skåne</li></ul></div></div></section>'
+            '<ul class="cred"><li><b>Certifierad</b> undersköterska</li><li><b>Diplomerad</b> fotvårdare</li><li><b>Hembesök</b> i sju orter i Skåne</li></ul><p><a class="link" href="om-mia.html">Läs mer om Mia ↗</a></p></div></div></section>'
             f'<section class="sec dark"><div class="wrap two"><div class="rv"><p class="label">Från första kontakt till hembesök</p><h2>Så går det till</h2></div><ol class="steps">{st}</ol></div></section>'
             f'<section class="sec"><div class="wrap"><div class="shead row rv"><div><p class="label">Blogg</p><h2>Fotvård i vardagen</h2></div><a class="link" href="blogg.html">Alla artiklar ↗</a></div><div class="stories">{arts}</div></div></section>'
             f'<section id="fragor" class="sec tint"><div class="wrap two"><div class="rv"><p class="label">Vanliga frågor</p><h2>Frågor och svar</h2></div><div class="faq rv">{fq}</div></div></section>'
@@ -195,8 +195,35 @@ def ort(n, s):
             f'<p class="mut">Mia besöker även {nl} med flera orter. <a href="index.html#omraden">Se alla orter</a>.</p></main>' + cta() + foot())
 
 
+def behandlingar():
+    sec = "".join(f'<section class="rv bsec"><p class="label">0{i + 1}</p><h2>{e(t)}</h2><p>{e(d)}</p><ul class="cred"><li>Berätta när du bokar var besväret sitter och hur länge det funnits</li><li>Ange din ort så Mia kan planera hembesöket</li><li>Fråga efter pris, som lämnas på förfrågan</li></ul></section>' for i, (t, d) in enumerate(BEHANDLINGAR))
+    steps = "".join(f"<li><h3>{h}</h3><p>{p}</p></li>" for h, p in [("Före besöket", "Du ringer eller mejlar, berättar ort och besvär och kommer överens med Mia om tid och pris."), ("Under besöket", "Mia kommer hem till dig med sin utrustning och utför fotvården på plats."), ("Efter besöket", "Hör av dig om du har frågor eller vill boka en ny tid.")])
+    ld = [biz(), crumbs(("Start", "index.html"), ("Behandlingar", "behandlingar.html"))]
+    return (head("Behandlingar | " + NAME, "Fotvård vid hembesök: förhårdnader, nageltrång, vårtor och liktornar. Mia Alineus är certifierad undersköterska och diplomerad fotvårdare.", ld=ld)
+            + "<body>" + top("b") + '<main id="innehall" class="wrap page"><p class="label">Behandlingar</p><h1 class="h1s">Fotvård hemma hos dig</h1><p class="lede">Mia hjälper dig bland annat med förhårdnader, nageltrång, vårtor och liktornar. Priser lämnas på förfrågan.</p>'
+            f'<div class="bgrid">{sec}</div><div class="two sp"><div><p class="label">Så går det till</p><h2>Ett hembesök i tre steg</h2></div><ol class="steps lt">{steps}</ol></div></main>' + cta() + foot())
+
+
+def ommia():
+    ld = [biz(), crumbs(("Start", "index.html"), ("Om Mia", "om-mia.html"))]
+    return (head("Om Mia | " + NAME, "Mia Alineus är certifierad undersköterska och diplomerad fotvårdare med hembesök i Södra Sandby, Lund, Eslöv med flera orter.", ld=ld)
+            + "<body>" + top("o") + '<main id="innehall" class="wrap page"><p class="label">Om Mia</p><h1 class="h1s">Fotvård som kommer till dig</h1>'
+            '<div class="two sp"><div><div class="hero-photo sm" role="img" aria-label="Hemmiljö"></div></div><div><p class="lede">Med utgångspunkt i Södra Sandby erbjuder Mia fotvård vid hembesök. Du kan höra av dig för egen del eller hjälpa en närstående att boka.</p>'
+            '<ul class="cred"><li><b>Certifierad</b> undersköterska</li><li><b>Diplomerad</b> fotvårdare</li><li>Hembesök i Eslöv, Staffanstorp, Veberöd, Genarp, Södra Sandby, Revinge och Lund</li></ul></div></div>'
+            '<div class="box"><h3>Vad kan du förvänta dig?</h3><ul class="cred"><li>Mia kommer hem till dig vid en tid ni kommit överens om</li><li>Du får prisuppgift innan du bestämmer dig</li><li>Du kan boka åt en närstående, stäm av med personen först</li></ul></div>'
+            f'<p class="actions"><a class="button" href="kontakt.html">Fråga om ett hembesök ↘</a><a class="link" href="{FB}">Mia på Facebook</a></p></main>' + cta() + foot())
+
+
+def orter():
+    links = "".join(f'<li><a href="fotvard-{s}.html"><b>{n}</b><span>Fotvård hemma i {n}</span></a></li>' for n, s in ORTER)
+    ld = [biz(), crumbs(("Start", "index.html"), ("Besöksorter", "orter.html"))]
+    return (head("Besöksorter | " + NAME, "Mia Alineus gör fotvårdsbesök hemma hos dig i Eslöv, Staffanstorp, Veberöd, Genarp, Södra Sandby, Revinge och Lund.", ld=ld)
+            + "<body>" + top("r") + '<main id="innehall" class="wrap page"><p class="label">Besöksorter</p><h1 class="h1s">Här gör Mia hembesök</h1><p class="lede">Välj din ort för att se om Mia kommer till dig, eller klicka på en ort för mer information.</p>'
+            f'{ortsel()}<ul class="ogrid">{links}</ul><p class="mut">Bor du utanför listan? Hör av dig ändå, det är Mia som avgör om ett besök går att ordna.</p></main>' + cta() + foot())
+
+
 def main():
-    pages = {"index.html": index(), "kontakt.html": kontakt(), "blogg.html": blogg()}
+    pages = {"index.html": index(), "behandlingar.html": behandlingar(), "om-mia.html": ommia(), "orter.html": orter(), "kontakt.html": kontakt(), "blogg.html": blogg()}
     for a in ARTICLES:
         pages[a["slug"] + ".html"] = article(a)
     for n, s in ORTER:
