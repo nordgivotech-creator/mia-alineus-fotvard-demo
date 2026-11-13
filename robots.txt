@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+# Demo: släpps efter godkännande
